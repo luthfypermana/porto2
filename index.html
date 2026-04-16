@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -27,12 +28,16 @@
                         accent: {
                             50: '#f0f9ff',
                             100: '#e0f2fe',
+                            200: '#bae6fd',
+                            400: '#38bdf8',
                             500: '#0ea5e9', // Electric Blue
                             600: '#0284c7', // Primary Accent
                             700: '#0369a1',
                             900: '#0c4a6e',
                         },
                         indigo: {
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
                             500: '#6366f1',
                             600: '#4f46e5',
                         }
@@ -74,12 +79,21 @@
         ::-webkit-scrollbar-track {
             background: rgba(241, 245, 249, 0.5); 
         }
+        .dark ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5); 
+        }
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1; 
             border-radius: 10px;
         }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569; 
+        }
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8; 
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
         }
         
         .no-scrollbar::-webkit-scrollbar {
@@ -121,7 +135,6 @@
             width: 100%;
         }
         .nav-btn.active {
-            color: #0284c7;
             font-weight: 700;
         }
 
@@ -134,10 +147,13 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background-color: white;
+            background-color: white; /* Will be toggled via inline or parent classes in future if needed */
             border: 3px solid #0284c7;
             z-index: 10;
             box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
+        }
+        .dark .timeline-item::before {
+            background-color: #0f172a;
         }
 
         /* Gradient Text */
@@ -147,6 +163,9 @@
             -webkit-text-fill-color: transparent;
             background-image: linear-gradient(90deg, #0284c7, #4f46e5);
         }
+        .dark .text-gradient {
+            background-image: linear-gradient(90deg, #38bdf8, #818cf8);
+        }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
@@ -154,21 +173,25 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-accent-200 selection:text-accent-900">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-accent-200 dark:selection:bg-accent-900 selection:text-accent-900 dark:selection:text-accent-100 transition-colors duration-500">
 
     <!-- Creative Ambient Background -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-sky-200/40 rounded-full mix-blend-multiply filter blur-[100px] animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-indigo-200/40 rounded-full mix-blend-multiply filter blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-teal-100/40 rounded-full mix-blend-multiply filter blur-[100px] animate-blob" style="animation-delay: 4s;"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-sky-200/40 dark:bg-sky-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-indigo-200/40 dark:bg-indigo-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-teal-100/40 dark:bg-teal-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
     <div class="flex flex-col lg:flex-row min-h-screen relative z-10 box-border">
 
         <!-- SECTION 1: FIXED LEFT SIDEBAR -->
-        <aside class="w-full lg:w-80 lg:fixed lg:top-0 lg:bottom-0 glass-card shadow-[0_4px_30px_rgba(0,0,0,0.05)] z-20 flex flex-col justify-between">
+        <aside class="w-full lg:w-80 lg:fixed lg:top-0 lg:bottom-0 glass-card shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-none z-20 flex flex-col justify-between transition-colors duration-500 border-r border-slate-200/50 dark:border-white/5">
             <div class="p-6 lg:p-10 flex-grow overflow-y-auto no-scrollbar">
                 
                 <!-- Profile Mobile View Enhancements: Flex row on small screens, col on large -->
@@ -179,81 +202,80 @@
                         <div class="absolute inset-0 bg-gradient-to-tr from-accent-500 to-indigo-500 rounded-full blur opacity-20 group-hover:opacity-60 transition-opacity duration-500"></div>
                         <img src="https://drive.google.com/thumbnail?id=1h10AvXfg-nctQZk5C8QuUpXH9dwOPaRB&sz=w800" 
                              alt="Luthfy Putra Permana" 
-                             class="relative w-32 h-32 sm:w-28 sm:h-28 lg:w-40 lg:h-40 rounded-full object-cover object-top border-4 border-white shadow-xl hover:scale-105 transition-transform duration-500 bg-white">
+                             class="relative w-32 h-32 sm:w-28 sm:h-28 lg:w-40 lg:h-40 rounded-full object-cover object-top border-4 border-white dark:border-slate-800 shadow-xl hover:scale-105 transition-transform duration-500 bg-white">
                     </div>
 
                     <!-- Profile Info -->
                     <div class="text-center sm:text-left lg:text-center w-full">
-                        <h1 class="text-3xl sm:text-2xl lg:text-3xl font-display font-extrabold tracking-tight mb-2 text-gradient leading-tight">Luthfy Putra Permana</h1>
-                        <h2 class="text-xs lg:text-sm font-semibold text-accent-700 bg-white/80 border border-accent-100 shadow-sm inline-block px-3 py-1.5 rounded-full mb-3">Tech-Forward HR & Digital Marketer</h2>
-                        <p class="text-slate-500 text-sm leading-relaxed font-medium lg:px-2">
+                        <h1 class="text-3xl sm:text-2xl lg:text-3xl font-display font-extrabold tracking-tight mb-2 text-gradient leading-tight">Luthfy Putra Permana S.M.</h1>
+                        <h2 class="text-xs lg:text-sm font-semibold text-accent-700 dark:text-accent-400 bg-white/80 dark:bg-slate-800/80 border border-accent-100 dark:border-slate-700 shadow-sm inline-block px-3 py-1.5 rounded-full mb-3">Tech-Forward HR & Digital Marketer</h2>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium lg:px-2">
                             "Bridging Enterprise Operations with AI & Digital Growth."
                         </p>
                     </div>
                 </div>
 
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-8 hidden lg:block"></div>
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent mb-8 hidden lg:block"></div>
 
                 <!-- Contact Info Grid on mobile, Stack on Desktop -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 text-sm bg-white/50 p-5 rounded-2xl border border-slate-100 shadow-[inset_0_2px_10px_rgba(255,255,255,0.7)] hover:bg-white/80 transition-colors">
-                    <div class="flex items-center text-slate-700 group hover:text-accent-600 transition-colors">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 text-accent-600 flex items-center justify-center mr-3 shrink-0 shadow-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 text-sm bg-white/50 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-[inset_0_2px_10px_rgba(255,255,255,0.7)] dark:shadow-none hover:bg-white/80 dark:hover:bg-slate-800/80 transition-colors">
+                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
                             <i data-lucide="mail" class="w-3.5 h-3.5"></i>
                         </div>
                         <div class="flex flex-col overflow-hidden leading-tight">
-                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Email</span>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Email</span>
                             <span class="font-semibold truncate"><a href="mailto:putraluthfy26@gmail.com">putraluthfy26@gmail.com</a></span>
                         </div>
                     </div>
-                    <div class="flex items-center text-slate-700 group hover:text-accent-600 transition-colors">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 text-accent-600 flex items-center justify-center mr-3 shrink-0 shadow-sm">
+                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
                             <i data-lucide="phone" class="w-3.5 h-3.5"></i>
                         </div>
                         <div class="flex flex-col leading-tight">
-                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Phone</span>
-                            <span class="font-semibold">081284634192</span>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Phone</span>
+                            <span class="font-semibold">08128463xxxx</span>
                         </div>
                     </div>
-                    <div class="flex items-center text-slate-700 group hover:text-accent-600 transition-colors sm:col-span-2 lg:col-span-1">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 text-accent-600 flex items-center justify-center mr-3 shrink-0 shadow-sm">
+                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors sm:col-span-2 lg:col-span-1">
+                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
                             <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
                         </div>
                         <div class="flex flex-col leading-tight">
-                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Location</span>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Location</span>
                             <span class="font-semibold">East Jakarta, Indonesia</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Social Links -->
-            <div class="p-6 border-t border-slate-200/40 flex justify-center bg-white/30 backdrop-blur-md">
-                <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-slate-600 hover:bg-[#0077b5] hover:text-white transition-all duration-300 shadow-md transform hover:-translate-y-1 hover:scale-110">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-            </div>
+            <!-- Social Link block has been removed per user request -->
         </aside>
 
         <!-- Right Content Area -->
         <main class="flex-1 lg:ml-80 flex flex-col min-h-screen relative w-full">
             
             <!-- SECTION 2: TOP NAVIGATION -->
-            <header class="sticky top-0 z-40 bg-white/70 backdrop-blur-xl border-b border-white/50 shadow-sm">
+            <header class="sticky top-0 z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/50 dark:border-white/5 shadow-sm transition-colors duration-500">
                 <div class="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                     
                     <!-- Scrollable Tabs -->
                     <div class="w-full sm:w-auto overflow-x-auto no-scrollbar pointer-events-auto">
-                        <nav class="flex space-x-6 sm:space-x-8 text-sm font-medium text-slate-500 whitespace-nowrap px-2 pb-1">
-                            <button class="nav-btn active transition-colors hover:text-slate-900 font-display" onclick="switchTab('about')">About</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 font-display" onclick="switchTab('resume')">Resume</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 font-display" onclick="switchTab('portfolio')">Portfolio</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 font-display" onclick="switchTab('credentials')">Credentials</button>
+                        <nav class="flex space-x-6 sm:space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap px-2 pb-1">
+                            <button class="nav-btn text-accent-600 dark:text-accent-400 active transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('about', this)">About</button>
+                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('resume', this)">Resume</button>
+                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('portfolio', this)">Portfolio</button>
+                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('credentials', this)">Credentials</button>
                         </nav>
                     </div>
 
-                    <!-- Download CV Button -->
-                    <div class="w-full sm:w-auto flex justify-center sm:block">
-                        <a href="#" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-accent-600 to-indigo-600 text-white font-semibold text-sm hover:from-accent-700 hover:to-indigo-700 transition-all shadow-[0_8px_16px_rgba(79,70,229,0.2)] transform hover:-translate-y-0.5 whitespace-nowrap ring-2 ring-white ring-offset-1">
+                    <!-- Theme Toggle & Download CV Button -->
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
+                        <button id="theme-toggle" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm">
+                            <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+                        </button>
+                        
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-accent-600 to-indigo-600 text-white font-semibold text-sm hover:from-accent-700 hover:to-indigo-700 transition-all shadow-[0_8px_16px_rgba(79,70,229,0.2)] transform hover:-translate-y-0.5 whitespace-nowrap ring-2 ring-white dark:ring-slate-900 ring-offset-1">
                             <i data-lucide="download" class="w-4 h-4 mr-2"></i>
                             Download CV
                         </a>
@@ -266,14 +288,14 @@
                 
                 <!-- SECTION 3: TAB 1 - "ABOUT" -->
                 <section id="about" class="tab-content active animate-fade-in">
-                    <div class="mb-14 glass-card p-6 sm:p-10 rounded-3xl shadow-xl shadow-slate-200/30 relative overflow-hidden">
+                    <div class="mb-14 glass-card p-6 sm:p-10 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-none relative overflow-hidden">
                         <!-- Decorative blob inside card -->
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent-100 rounded-full blur-2xl opacity-60"></div>
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent-100 dark:bg-accent-500/10 rounded-full blur-2xl opacity-60"></div>
                         
-                        <h2 class="text-3xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 mb-6 relative z-10">About Me<span class="text-accent-600">.</span></h2>
+                        <h2 class="text-3xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 relative z-10">About Me<span class="text-accent-600 dark:text-accent-400">.</span></h2>
                         <h3 class="text-xl sm:text-2xl font-bold mb-6 text-gradient inline-block leading-snug relative z-10">"Logika Sistem, Akurasi Data, Pertumbuhan Digital & AI."</h3>
                         
-                        <div class="space-y-5 text-slate-600 leading-relaxed text-[17px] relative z-10 font-medium">
+                        <div class="space-y-5 text-slate-600 dark:text-slate-400 leading-relaxed text-[17px] relative z-10 font-medium">
                             <p>
                                 Saya memadukan dua dunia yang jarang bertemu: presisi operasional SDM skala enterprise dan ketajaman strategi Digital Marketing. Dengan fondasi IT yang kuat dari SMKN 26 Pembangunan Jakarta dan pemahaman bisnis dari S1 Manajemen STIE Jayakarta, saya melihat setiap tantangan operasional melalui lensa sistem dan data.
                             </p>
@@ -291,120 +313,121 @@
 
                     <div class="mb-16">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center shrink-0">
                                 <i data-lucide="zap" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="text-2xl font-display font-bold text-slate-900">My Expertise</h3>
+                            <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">My Expertise</h3>
                         </div>
                         
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-                            <!-- Skill Item -->
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="database" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800">SAP HR/HCM</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200">SAP HR/HCM</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Looker Studio <br><span class="text-xs text-slate-500 font-medium">(HR Analytics)</span></h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Looker Studio <br><span class="text-xs text-slate-500 dark:text-slate-400 font-medium">(HR Analytics)</span></h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <!-- Repeats of Skill Structure -->
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="table-2" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Advanced Spreadsheet</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Advanced Spreadsheet</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="sparkles" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">AI Prompting <br><span class="text-[10px] text-slate-500 font-medium">(Img, Vid, Script)</span></h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">AI Prompting <br><span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">(Img, Vid, Script)</span></h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="cpu" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Google AI Studio</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Google AI Studio</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <!-- Second Row Skills -->
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="clapperboard" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">CapCut Editing</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">CapCut Editing</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="layout" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Landing Page <br><span class="text-xs text-slate-500 font-medium">(WP, Scalev)</span></h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Landing Page <br><span class="text-xs text-slate-500 dark:text-slate-400 font-medium">(WP, Scalev)</span></h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="target" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Meta Ads Strategist</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Meta Ads Strategist</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="image" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Canva Editing</h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Canva Editing</h4>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white hover:border-accent-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 text-accent-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                                     <i data-lucide="package" class="w-6 h-6"></i>
                                 </div>
-                                <h4 class="font-bold text-sm text-slate-800 leading-tight">Product Mgmt. <br><span class="text-[10px] text-slate-500 font-medium">(Digital)</span></h4>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Product Mgmt. <br><span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">(Digital)</span></h4>
                             </div>
                         </div>
                     </div>
 
                     <div>
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                            <div class="w-10 h-10 bg-teal-100 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 rounded-xl flex items-center justify-center shrink-0">
                                 <i data-lucide="layers" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="text-2xl font-display font-bold text-slate-900">What I Bring to the Table</h3>
+                            <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">What I Bring to the Table</h3>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- Card 1 -->
-                            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-white shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-accent-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent-50 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
+                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-accent-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent-50 dark:bg-accent-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
                                 <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-accent-600 mb-6 group-hover:text-indigo-600 transition-colors">
+                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-accent-600 dark:text-accent-400 mb-6 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                         <i data-lucide="briefcase" class="w-6 h-6"></i>
                                     </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 mb-3">Enterprise HR Ops</h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Enterprise HR Ops</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                         Compensation & Benefit, Payroll Processing, & HCMS Administration.
                                     </p>
                                 </div>
                             </div>
                             <!-- Card 2 -->
-                            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-white shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-50 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
+                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-50 dark:bg-indigo-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
                                 <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-indigo-600 mb-6 group-hover:text-accent-600 transition-colors">
+                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                                         <i data-lucide="line-chart" class="w-6 h-6"></i>
                                     </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 mb-3">Data Analytics & Auto</h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Data Analytics & Auto</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                         Personnel Dashboard Visualization, Advanced Spreadsheet logic, & Apps Script Automation.
                                     </p>
                                 </div>
                             </div>
                             <!-- Card 3 -->
-                            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-white shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-50 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
+                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-50 dark:bg-teal-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
                                 <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-teal-600 mb-6 group-hover:text-indigo-600 transition-colors">
+                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-teal-600 dark:text-teal-400 mb-6 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                         <i data-lucide="rocket" class="w-6 h-6"></i>
                                     </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 mb-3">Digital Marketing & AI</h4>
-                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Digital Marketing & AI</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                         Meta Ads Optimization, High-Converting Landing Pages, & AI-Assisted Creative Production.
                                     </p>
                                 </div>
@@ -415,52 +438,52 @@
 
                 <!-- SECTION 4: TAB 2 - "RESUME" -->
                 <section id="resume" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 mb-12">Resume <span class="text-accent-600">.</span></h2>
+                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-12">Resume <span class="text-accent-600 dark:text-accent-400">.</span></h2>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         
                         <!-- Professional Experience -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-white shadow-xl shadow-slate-200/50">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-none shadow-xl shadow-slate-200/50 dark:shadow-none">
                             <div class="flex items-center mb-8">
                                 <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-accent-500/30">
                                     <i data-lucide="briefcase" class="w-6 h-6"></i>
                                 </div>
-                                <h3 class="text-2xl font-display font-bold text-slate-900">Experience</h3>
+                                <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">Experience</h3>
                             </div>
                             
-                            <div class="relative border-l-[3px] border-accent-200 ml-6 pl-8 pb-4">
+                            <div class="relative border-l-[3px] border-accent-200 dark:border-slate-700 ml-6 pl-8 pb-4">
                                 <!-- Role 1 -->
                                 <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.1s;">
-                                    <span class="inline-block px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100">8 Years</span>
-                                    <h4 class="text-xl font-bold text-slate-900 mb-1">HR Administration & C&B</h4>
-                                    <h5 class="text-accent-600 font-semibold mb-3 flex items-center">
+                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">8 Years</span>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">HR Administration & C&B</h4>
+                                    <h5 class="text-accent-600 dark:text-accent-400 font-semibold mb-3 flex items-center">
                                         <i data-lucide="building-2" class="w-4 h-4 mr-2"></i> WIKA
                                     </h5>
-                                    <p class="text-slate-600 leading-relaxed text-sm font-medium">
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
                                         Mengelola presisi kompensasi dan administrasi SDM. Menggabungkan ketelitian operasional SAP & HCMS dengan kemampuan merakit visualisasi data (Looker Studio) untuk memantau komposisi personil.
                                     </p>
                                 </div>
                                 
                                 <!-- Role 2 -->
                                 <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.2s;">
-                                    <span class="inline-block px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100">Project Based</span>
-                                    <h4 class="text-xl font-bold text-slate-900 mb-1 leading-tight">Digital Marketer, AI Creator <br>& Landing Page Specialist</h4>
-                                    <h5 class="text-indigo-600 font-semibold mt-2 mb-3 flex items-center">
+                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Project Based</span>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1 leading-tight">Digital Marketer, AI Creator <br>& Landing Page Specialist</h4>
+                                    <h5 class="text-indigo-600 dark:text-indigo-400 font-semibold mt-2 mb-3 flex items-center">
                                         <i data-lucide="folder-git-2" class="w-4 h-4 mr-2"></i> Collaborations
                                     </h5>
-                                    <p class="text-slate-600 leading-relaxed text-sm font-medium">
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
                                         Merancang ekosistem landing page, strategi digital marketing, dan optimasi Meta Ads. Memanfaatkan Google AI Studio, teknik AI prompting, dan CapCut untuk memproduksi aset visual dan copywriting secara efisien.
                                     </p>
                                 </div>
 
                                 <!-- Role 3 -->
                                 <div class="timeline-item relative animate-slide-up" style="animation-delay: 0.3s;">
-                                    <span class="inline-block px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100">1 Year</span>
-                                    <h4 class="text-xl font-bold text-slate-900 mb-1">IT Support</h4>
-                                    <h5 class="text-teal-600 font-semibold mb-3 flex items-center">
+                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">1 Year</span>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">IT Support</h4>
+                                    <h5 class="text-teal-600 dark:text-teal-400 font-semibold mb-3 flex items-center">
                                         <i data-lucide="building" class="w-4 h-4 mr-2"></i> BNPB
                                     </h5>
-                                    <p class="text-slate-600 leading-relaxed text-sm font-medium">
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
                                         Memberikan dukungan teknis, pemeliharaan infrastruktur IT, dan troubleshooting jaringan untuk operasional instansi pemerintah.
                                     </p>
                                 </div>
@@ -468,29 +491,29 @@
                         </div>
 
                         <!-- Education -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-white shadow-xl shadow-slate-200/50">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-none shadow-xl shadow-slate-200/50 dark:shadow-none">
                             <div class="flex items-center mb-8">
                                 <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-indigo-500/30">
                                     <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                                 </div>
-                                <h3 class="text-2xl font-display font-bold text-slate-900">Education</h3>
+                                <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">Education</h3>
                             </div>
                             
-                            <div class="relative border-l-[3px] border-indigo-200 ml-6 pl-8 pb-4">
+                            <div class="relative border-l-[3px] border-indigo-200 dark:border-slate-700 ml-6 pl-8 pb-4">
                                 <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.2s;">
-                                    <span class="inline-block px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100">Higher Education</span>
-                                    <h4 class="text-xl font-bold text-slate-900 mb-1">S1 Manajemen</h4>
-                                    <h5 class="text-slate-500 font-semibold mb-3">STIE Jayakarta</h5>
-                                    <p class="text-slate-600 leading-relaxed text-sm font-medium">
+                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Higher Education</span>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">S1 Manajemen</h4>
+                                    <h5 class="text-slate-500 dark:text-slate-400 font-semibold mb-3">STIE Jayakarta</h5>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
                                         Mempelajari dasar-dasar manajemen bisnis, organisasi, dan strategi perencanaan untuk mengelola operasional dengan efisien.
                                     </p>
                                 </div>
                                 
                                 <div class="timeline-item relative animate-slide-up" style="animation-delay: 0.3s;">
-                                    <span class="inline-block px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100">Vocational</span>
-                                    <h4 class="text-xl font-bold text-slate-900 mb-1">Teknik Komputer</h4>
-                                    <h5 class="text-slate-500 font-semibold mb-3">SMKN 26 Pembangunan Jakarta</h5>
-                                    <p class="text-slate-600 leading-relaxed text-sm font-medium">
+                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Vocational</span>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Teknik Komputer</h4>
+                                    <h5 class="text-slate-500 dark:text-slate-400 font-semibold mb-3">SMKN 26 Pembangunan Jakarta</h5>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
                                         Membangun fondasi kuat di bidang IT, jaringan komputer, dan fundamental sistem teknologi informasi.
                                     </p>
                                 </div>
@@ -502,37 +525,37 @@
 
                 <!-- SECTION 5: TAB 3 - "PORTFOLIO" -->
                 <section id="portfolio" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 mb-10">Portfolio <span class="text-accent-600">.</span></h2>
+                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-10">Portfolio <span class="text-accent-600 dark:text-accent-400">.</span></h2>
                     
                     <!-- Filter Buttons -->
-                    <div class="flex flex-wrap gap-2 sm:gap-3 mb-10 bg-white/50 p-2 rounded-3xl inline-flex backdrop-blur-md border border-white/60">
-                        <button class="filter-btn active px-4 sm:px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-slate-900 text-white shadow-xl shadow-slate-900/20" data-filter="all">All Projects</button>
-                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 hover:bg-white hover:shadow-sm" data-filter="hr-data">HR & Data Analytics</button>
-                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 hover:bg-white hover:shadow-sm" data-filter="digital-ai">Digital Marketing & AI</button>
+                    <div class="flex flex-wrap gap-2 sm:gap-3 mb-10 bg-white/50 dark:bg-slate-800/50 p-2 rounded-3xl inline-flex backdrop-blur-md border border-white/60 dark:border-white/5 shadow-sm">
+                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-slate-900 dark:bg-accent-600 text-white shadow-xl shadow-slate-900/20" data-filter="all">All Projects</button>
+                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm" data-filter="hr-data">HR & Data Analytics</button>
+                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm" data-filter="digital-ai">Digital Marketing & AI</button>
                     </div>
 
                     <!-- Portfolio Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         
                         <!-- Card 1 -->
-                        <div class="portfolio-item bg-white/80 backdrop-blur-sm rounded-3xl border border-white shadow-lg shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
+                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
                             <div class="relative h-56 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="SAP Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-white/95 backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full text-slate-800 shadow-sm">Enterprise HR</span>
+                                    <span class="bg-white/95 text-slate-800 backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Enterprise HR</span>
                                 </div>
                             </div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 mb-3">SAP & HCMS Maintenance</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">SAP & HCMS Maintenance</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                     Menjaga integritas data personalia di sistem HCMS WIKA. Memvalidasi proses kompensasi bulanan melalui SAP dengan standar nol-toleransi terhadap anomali data untuk operasional skala besar.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="portfolio-item bg-white/80 backdrop-blur-sm rounded-3xl border border-white shadow-lg shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
+                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
                             <div class="relative h-56 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Data Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -541,15 +564,15 @@
                                 </div>
                             </div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 mb-3">Personnel HR Dashboard Looker Studio</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Personnel HR Dashboard Looker Studio</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                     Merancang arsitektur data dari spreadsheet untuk melacak pergerakan karyawan. Diolah menjadi dashboard visual interaktif yang memudahkan manajemen memantau metrik HR secara transparan (WIKA).
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="portfolio-item bg-white/80 backdrop-blur-sm rounded-3xl border border-white shadow-lg shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
+                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
                             <div class="relative h-56 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop" alt="Web Development" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -558,15 +581,15 @@
                                 </div>
                             </div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 mb-3">Digital Product Ecosystem Ezplan.id</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Digital Product Ecosystem Ezplan.id</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                     Membangun ekosistem produk digital berbasis website dari tahap nol. Merancang landing page yang berorientasi pada user experience dan tingkat konversi (CVR) tinggi dengan sistem otomatisasi.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 4 -->
-                        <div class="portfolio-item bg-white/80 backdrop-blur-sm rounded-3xl border border-white shadow-lg shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
+                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
                             <div class="relative h-56 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="Meta Ads Marketing" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -575,15 +598,15 @@
                                 </div>
                             </div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 mb-3">Meta Ads & Traffic Optimization</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Meta Ads & Traffic Optimization</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
                                     Menganalisis audiens, merancang winning hooks, dan mengoptimalkan kampanye via Meta Ads. Memanfaatkan metrik kunci (CPC, CTR, ROAS) untuk mengontrol efisiensi anggaran dan akuisisi.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Card 5 -->
-                        <div class="portfolio-item bg-white/80 backdrop-blur-sm rounded-3xl border border-white shadow-lg shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group md:col-span-2" data-category="digital-ai">
+                        <!-- Card 5 (Spans 2 cols) -->
+                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group md:col-span-2" data-category="digital-ai">
                             <div class="relative h-56 sm:h-64 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="AI Technology" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
@@ -604,13 +627,13 @@
 
                 <!-- SECTION 6: TAB 4 - "CREDENTIALS" -->
                 <section id="credentials" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 mb-12">Credentials <span class="text-accent-600">.</span></h2>
+                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-12">Credentials <span class="text-accent-600 dark:text-accent-400">.</span></h2>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         
                         <!-- Certificate 1 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-accent-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
-                            <div class="absolute -right-10 -top-10 text-accent-500 opacity-5 group-hover:rotate-12 transition-transform duration-700">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-accent-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                            <div class="absolute -right-10 -top-10 text-accent-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
                                 <i data-lucide="award" class="w-48 h-48"></i>
                             </div>
                             
@@ -618,11 +641,11 @@
                                 <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-600 text-white rounded-2xl shadow-[0_8px_16px_rgba(2,132,199,0.3)] flex items-center justify-center mb-6">
                                     <i data-lucide="award" class="w-7 h-7"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-5 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-5 leading-snug">
                                     Certified HR Generalist
-                                    <span class="block text-accent-600 text-sm mt-1 font-semibold">Batch 20 (CHRG)</span>
+                                    <span class="block text-accent-600 dark:text-accent-400 text-sm mt-1 font-semibold">Batch 20 (CHRG)</span>
                                 </h3>
-                                <div class="w-full h-32 bg-white/50 border-2 border-dashed border-accent-200 rounded-2xl flex flex-col items-center justify-center text-accent-400 group-hover:bg-accent-50 transition-colors">
+                                <div class="w-full h-32 bg-white/50 dark:bg-slate-800/50 border-2 border-dashed border-accent-200 dark:border-slate-600 rounded-2xl flex flex-col items-center justify-center text-accent-400 dark:text-accent-300 group-hover:bg-accent-50 dark:group-hover:bg-slate-700 transition-colors">
                                     <i data-lucide="shield-check" class="w-6 h-6 mb-2"></i>
                                     <span class="text-xs font-bold uppercase tracking-wider">Verified</span>
                                 </div>
@@ -630,8 +653,8 @@
                         </div>
 
                         <!-- Certificate 2 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-slate-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
-                            <div class="absolute -right-10 -top-10 text-slate-500 opacity-5 group-hover:rotate-12 transition-transform duration-700">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-slate-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                            <div class="absolute -right-10 -top-10 text-slate-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
                                 <i data-lucide="briefcase" class="w-48 h-48"></i>
                             </div>
                             
@@ -639,19 +662,19 @@
                                 <div class="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-900 text-white rounded-2xl shadow-[0_8px_16px_rgba(15,23,42,0.3)] flex items-center justify-center mb-6">
                                     <i data-lucide="briefcase" class="w-7 h-7"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">
                                     Sertifikasi Kepala Bagian SDM
-                                    <span class="block text-slate-500 text-sm mt-1 font-semibold">(BNSP)</span>
+                                    <span class="block text-slate-500 dark:text-slate-400 text-sm mt-1 font-semibold">(BNSP)</span>
                                 </h3>
-                                <p class="text-slate-600 text-xs leading-relaxed mb-5 font-medium">
+                                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-5 font-medium">
                                     Menguatkan fondasi legalitas, compliance, dan eksekusi strategi operasional berskala enterprise.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Certificate 3 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden sm:col-span-2 lg:col-span-1">
-                            <div class="absolute -right-10 -top-10 text-indigo-500 opacity-5 group-hover:rotate-12 transition-transform duration-700">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden sm:col-span-2 lg:col-span-1">
+                            <div class="absolute -right-10 -top-10 text-indigo-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
                                 <i data-lucide="rocket" class="w-48 h-48"></i>
                             </div>
                             
@@ -659,11 +682,11 @@
                                 <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl shadow-[0_8px_16px_rgba(79,70,229,0.3)] flex items-center justify-center mb-6">
                                     <i data-lucide="rocket" class="w-7 h-7"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">
                                     Digital Marketing
-                                    <span class="block text-indigo-500 text-sm mt-1 font-semibold">MySkill.id</span>
+                                    <span class="block text-indigo-500 dark:text-indigo-400 text-sm mt-1 font-semibold">MySkill.id</span>
                                 </h3>
-                                <p class="text-slate-600 text-xs leading-relaxed mb-5 font-medium">
+                                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-5 font-medium">
                                     Memvalidasi pemahaman mengenai strategi pemasaran digital, performance marketing, dan eksekusi kampanye.
                                 </p>
                             </div>
@@ -681,21 +704,40 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check local storage for preference
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
         // Tab Switching Logic
-        function switchTab(tabId) {
+        function switchTab(tabId, btnElement) {
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.remove('active', 'text-accent-600', 'dark:text-accent-400');
             });
             
             const selectedTab = document.getElementById(tabId);
             selectedTab.classList.add('active');
             
-            const activeBtn = document.querySelector(`.nav-btn[onclick="switchTab('${tabId}')"]`);
-            if(activeBtn) activeBtn.classList.add('active');
+            if(btnElement) {
+                btnElement.classList.add('active', 'text-accent-600', 'dark:text-accent-400');
+            }
 
             // Set scroll behavior
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -708,11 +750,11 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-slate-900', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
-                    b.classList.add('bg-transparent', 'text-slate-600');
+                    b.classList.remove('bg-slate-900', 'dark:bg-accent-600', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
+                    b.classList.add('bg-transparent', 'text-slate-600', 'dark:text-slate-300');
                 });
-                btn.classList.remove('bg-transparent', 'text-slate-600');
-                btn.classList.add('bg-slate-900', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
+                btn.classList.remove('bg-transparent', 'text-slate-600', 'dark:text-slate-300');
+                btn.classList.add('bg-slate-900', 'dark:bg-accent-600', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
 
                 const filterValue = btn.getAttribute('data-filter');
                 portfolioItems.forEach(item => {
