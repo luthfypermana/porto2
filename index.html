@@ -1,772 +1,1435 @@
-<!DOCTYPE html>
-<html lang="en" class="light">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luthfy Putra Permana - Tech-Forward HR & Digital Marketer</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Luthfy Putra Permana - Tech-Forward HR Professional & Digital Marketer bridging Enterprise Operations with AI & Digital Growth.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        accent: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            400: '#38bdf8',
-                            500: '#0ea5e9', // Electric Blue
-                            600: '#0284c7', // Primary Accent
-                            700: '#0369a1',
-                            900: '#0c4a6e',
-                        },
-                        indigo: {
-                            100: '#e0e7ff',
-                            200: '#c7d2fe',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                        'slide-up': 'slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-                        'blob': 'blob 7s infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luthfy Putra Permana S.M. - Profil Digital Marketing & AI Content</title>
+  <meta name="description" content="Profil Luthfy Putra Permana S.M.: digital marketing, Meta Ads, konten organik IG/FB/TikTok, Canva editing, landing page WordPress/Scalev, product management, Looker Studio dashboard, dan AI video.">
+  <meta property="og:title" content="Luthfy Putra Permana S.M. - Profil Digital Marketing & AI Content">
+  <meta property="og:description" content="Cerita project @ezplan_id, @fellisrgns, 8000+ sales, Rp300 juta+ spend iklan, 130 ribu followers, 30 juta views, dan monetisasi Facebook.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luthfypermana.github.io/porto2/">
+  <meta name="theme-color" content="#111827">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --panel: #ffffff;
+      --soft: #f6f8fb;
+      --blue: #1769ff;
+      --cyan: #03a6c7;
+      --green: #12b76a;
+      --orange: #f79009;
+      --pink: #e0448f;
+      --shadow: 0 20px 70px rgba(16, 24, 40, .12);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(241, 245, 249, 0.5); 
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.5); 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 10px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #64748b; 
-        }
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(3, 166, 199, .13), transparent 28rem),
+        radial-gradient(circle at 88% 4%, rgba(224, 68, 143, .12), transparent 26rem),
+        linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%);
+      color: var(--ink);
+    }
 
-        .nav-btn {
-            position: relative;
-        }
-        .nav-btn::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, #0284c7, #4f46e5);
-            border-radius: 4px;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nav-btn:hover::after, .nav-btn.active::after {
-            width: 100%;
-        }
-        .nav-btn.active {
-            font-weight: 700;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* Timeline Styles */
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -33px;
-            top: 8px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background-color: white; /* Will be toggled via inline or parent classes in future if needed */
-            border: 3px solid #0284c7;
-            z-index: 10;
-            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
-        }
-        .dark .timeline-item::before {
-            background-color: #0f172a;
-        }
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
 
-        /* Gradient Text */
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, #0284c7, #4f46e5);
-        }
-        .dark .text-gradient {
-            background-image: linear-gradient(90deg, #38bdf8, #818cf8);
-        }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-        .dark .glass-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-    </style>
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(228, 231, 236, .8);
+      background: rgba(251, 252, 255, .88);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 30px rgba(23, 105, 255, .28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+      background: #eef4ff;
+    }
+
+    .nav-links a.active {
+      color: #1457d9;
+      background: rgba(23, 105, 255, .08);
+    }
+
+    .btn {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: #111827;
+      box-shadow: 0 16px 38px rgba(16, 24, 40, .18);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .78fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(23, 105, 255, .18);
+      border-radius: 8px;
+      color: #1457d9;
+      background: rgba(23, 105, 255, .07);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 6.2vw, 78px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 22px 0 0;
+      color: #344054;
+      font-size: 20px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      min-width: 0;
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 12px 38px rgba(16, 24, 40, .06);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-3px);
+      border-color: rgba(23, 105, 255, .24);
+      box-shadow: 0 18px 48px rgba(16, 24, 40, .1);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(26px, 2.35vw, 38px);
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1100px) {
+      .metric strong {
+        font-size: clamp(22px, 2.8vw, 32px);
+      }
+
+      .metric span {
+        font-size: 14px;
+      }
+    }
+
+    .showcase {
+      position: relative;
+    }
+
+    .profile-card {
+      width: min(100%, 410px);
+      margin-left: auto;
+      padding: 18px;
+      border: 1px solid rgba(228, 231, 236, .95);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .86);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-photo-wrap {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center top;
+    }
+
+    .profile-caption {
+      padding: 18px 4px 4px;
+    }
+
+    .profile-caption h2 {
+      margin: 0;
+      font-size: clamp(24px, 2.25vw, 30px);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .profile-caption p {
+      margin: 10px 0 0;
+      color: #475467;
+      line-height: 1.6;
+    }
+
+    .phone {
+      position: relative;
+      width: min(100%, 390px);
+      margin-left: auto;
+      border: 1px solid rgba(16, 24, 40, .08);
+      border-radius: 30px;
+      padding: 14px;
+      background: #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .phone-screen {
+      overflow: hidden;
+      border-radius: 22px;
+      background: #f7fbff;
+    }
+
+    .screen-head {
+      min-height: 168px;
+      padding: 22px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(23, 105, 255, .92), rgba(3, 166, 199, .78)),
+        linear-gradient(45deg, #12213a, #1c3154);
+    }
+
+    .handle-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .screen-head h2 {
+      margin: 34px 0 10px;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .screen-head p {
+      margin: 0;
+      opacity: .86;
+      line-height: 1.5;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 8px;
+      background: #f7fbff;
+    }
+
+    .post-tile {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #dbe7f3;
+      position: relative;
+    }
+
+    .post-tile:nth-child(1) { background: linear-gradient(135deg, #111827, #1769ff); }
+    .post-tile:nth-child(2) { background: linear-gradient(135deg, #f79009, #ffd166); }
+    .post-tile:nth-child(3) { background: linear-gradient(135deg, #e0448f, #8b5cf6); }
+    .post-tile:nth-child(4) { background: linear-gradient(135deg, #12b76a, #03a6c7); }
+    .post-tile:nth-child(5) { background: linear-gradient(135deg, #344054, #98a2b3); }
+    .post-tile:nth-child(6) { background: linear-gradient(135deg, #1769ff, #80d7ff); }
+
+    .post-tile span {
+      position: absolute;
+      left: 10px;
+      bottom: 9px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 0;
+      bottom: 34px;
+      width: 265px;
+      padding: 18px;
+      border: 1px solid rgba(228, 231, 236, .9);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .92);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-label {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .bar {
+      height: 9px;
+      margin-top: 10px;
+      border-radius: 99px;
+      background: #edf2f7;
+      overflow: hidden;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: -8px 0 24px;
+    }
+
+    .filter-btn {
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: #344054;
+      background: rgba(255,255,255,.78);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(23, 105, 255, .28);
+    }
+
+    .filter-btn.is-active {
+      color: #fff;
+      border-color: #111827;
+      background: #111827;
+    }
+
+    .case-card, .service-card, .proof-card, .stack-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 16px 48px rgba(16, 24, 40, .07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .case-card:hover, .service-card:hover, .proof-card:hover, .stack-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(23, 105, 255, .24);
+      box-shadow: 0 22px 62px rgba(16, 24, 40, .11);
+    }
+
+    .case-card {
+      overflow: hidden;
+    }
+
+    .case-card.is-hidden,
+    .stack-card.is-hidden {
+      display: none;
+    }
+
+    .case-visual {
+      min-height: 230px;
+      padding: 22px;
+      display: grid;
+      align-content: end;
+      color: #fff;
+      background: #111827;
+      position: relative;
+    }
+
+    .case-icon,
+    .proof-icon,
+    .tool-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+    }
+
+    .case-icon {
+      position: relative;
+      margin-bottom: 14px;
+      color: #fff;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .case-visual:before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .case-card:nth-child(1) .case-visual {
+      background:
+        linear-gradient(135deg, rgba(23,105,255,.88), rgba(18,183,106,.76)),
+        #111827;
+    }
+
+    .case-card:nth-child(2) .case-visual {
+      background:
+        linear-gradient(135deg, rgba(224,68,143,.86), rgba(247,144,9,.76)),
+        #111827;
+    }
+
+    .case-card:nth-child(3) .case-visual {
+      background:
+        linear-gradient(135deg, rgba(16,24,40,.94), rgba(23,105,255,.74)),
+        #111827;
+    }
+
+    .case-card:nth-child(4) .case-visual {
+      background:
+        linear-gradient(135deg, rgba(3,166,199,.88), rgba(139,92,246,.76)),
+        #111827;
+    }
+
+    .case-visual .platform {
+      position: relative;
+      width: fit-content;
+      margin-bottom: 54px;
+      padding: 8px 11px;
+      border-radius: 8px;
+      color: #111827;
+      background: rgba(255,255,255,.92);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .case-visual strong {
+      position: relative;
+      max-width: 470px;
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .case-body {
+      padding: 24px;
+    }
+
+    .case-body h3 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .case-body p {
+      margin: 12px 0 0;
+      color: #475467;
+      line-height: 1.68;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: #344054;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .proof-card {
+      padding: 24px;
+    }
+
+    .proof-icon {
+      margin-bottom: 18px;
+      color: #1457d9;
+      background: rgba(23, 105, 255, .08);
+    }
+
+    .proof-card strong {
+      display: block;
+      color: #111827;
+      font-size: 42px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .proof-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 24px;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      color: #fff;
+      background: #111827;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .service-card:hover .icon {
+      transform: rotate(-4deg) scale(1.05);
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    .service-card h3, .stack-card h3 {
+      margin: 0;
+      font-size: 21px;
+      letter-spacing: 0;
+    }
+
+    .service-card p, .stack-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stack-card {
+      padding: 20px;
+    }
+
+    .stack-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-icon {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 auto;
+      color: #1457d9;
+      background: rgba(23, 105, 255, .08);
+    }
+
+    .tool-icon .icon-svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cta {
+      padding: 64px 0 86px;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 8px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(17,24,39,.98), rgba(23,105,255,.84)),
+        #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .cta-panel p {
+      max-width: 700px;
+      margin: 12px 0 0;
+      color: rgba(255,255,255,.76);
+      line-height: 1.65;
+    }
+
+    .cta-panel .btn {
+      background: #fff;
+      color: #111827;
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase {
+        min-height: auto;
+      }
+
+      .phone {
+        margin: 28px auto 0;
+      }
+
+      .profile-card {
+        margin: 28px auto 0;
+      }
+
+      .floating-card {
+        position: relative;
+        width: auto;
+        margin: -38px auto 0;
+        bottom: auto;
+      }
+
+      .metric-strip,
+      .proof-grid,
+      .services,
+      .stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .topbar {
+        position: sticky;
+      }
+
+      .nav {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 0;
+        padding: 12px 0;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 6px;
+        padding-bottom: 0;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+
+      .nav-links .btn {
+        width: auto;
+        min-height: 36px;
+        margin-top: 0;
+        padding: 0 14px;
+      }
+
+      .hero {
+        padding: 30px 0 44px;
+      }
+
+      .hero-grid {
+        gap: 22px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      h1 {
+        font-size: clamp(36px, 10vw, 42px);
+        line-height: 1;
+      }
+
+      .lead {
+        font-size: 17px;
+        line-height: 1.55;
+        margin-top: 16px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .hero-actions .btn {
+        padding: 0 12px;
+      }
+
+      .case-grid,
+      .proof-grid,
+      .services,
+      .stack {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        min-height: 104px;
+        padding: 16px;
+      }
+
+      .metric strong {
+        font-size: 28px;
+      }
+
+      .metric span {
+        font-size: 13px;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .section-head h2 {
+        font-size: 34px;
+      }
+
+      .filter-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-bottom: 16px;
+        padding-bottom: 3px;
+        scrollbar-width: none;
+      }
+
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+        flex: 0 0 auto;
+        min-height: 36px;
+        font-size: 13px;
+      }
+
+      .case-visual strong {
+        font-size: 28px;
+      }
+
+      .case-visual {
+        min-height: 170px;
+      }
+
+      .case-visual .platform {
+        margin-bottom: 34px;
+      }
+
+      .case-body,
+      .service-card,
+      .proof-card,
+      .stack-card {
+        padding: 18px;
+      }
+
+      .profile-card {
+        width: min(100%, 320px);
+        padding: 12px;
+        justify-self: center;
+      }
+
+      .profile-caption {
+        padding: 14px 4px 4px;
+      }
+
+      .profile-caption h2 {
+        font-size: 24px;
+      }
+
+      .profile-caption p {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .cta-panel {
+        padding: 26px;
+      }
+
+    }
+  </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-accent-200 dark:selection:bg-accent-900 selection:text-accent-900 dark:selection:text-accent-100 transition-colors duration-500">
-
-    <!-- Creative Ambient Background -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-sky-200/40 dark:bg-sky-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-indigo-200/40 dark:bg-indigo-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-teal-100/40 dark:bg-teal-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] animate-blob" style="animation-delay: 4s;"></div>
+<body>
+  <svg class="sr-only" aria-hidden="true">
+    <symbol id="i-megaphone" viewBox="0 0 24 24">
+      <path d="M4 14h3l9 4V6L7 10H4z"></path>
+      <path d="M7 14l1 5h3"></path>
+      <path d="M18 9a4 4 0 0 1 0 6"></path>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+      <path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"></path>
+    </symbol>
+    <symbol id="i-video" viewBox="0 0 24 24">
+      <rect x="3" y="6" width="13" height="12" rx="2"></rect>
+      <path d="M16 10l5-3v10l-5-3z"></path>
+    </symbol>
+    <symbol id="i-dollar" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M12 7v10"></path>
+      <path d="M15 9.5c-.7-1-1.7-1.5-3-1.5-1.7 0-3 .8-3 2s1.1 1.8 3 2.2 3 .9 3 2.3-1.3 2.5-3 2.5c-1.5 0-2.7-.6-3.5-1.7"></path>
+    </symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24">
+      <rect x="7" y="7" width="10" height="10" rx="2"></rect>
+      <path d="M9 1v4"></path><path d="M15 1v4"></path>
+      <path d="M9 19v4"></path><path d="M15 19v4"></path>
+      <path d="M1 9h4"></path><path d="M1 15h4"></path>
+      <path d="M19 9h4"></path><path d="M19 15h4"></path>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M4 19V5"></path><path d="M4 19h16"></path>
+      <path d="M8 16v-5"></path><path d="M12 16V8"></path><path d="M16 16v-7"></path>
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24">
+      <path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 1.4-3.4l-.4-.4a2 2 0 0 1 1.4-3.4H18a3 3 0 0 0 3-3c0-4.4-4-7.8-9-7.8z"></path>
+      <circle cx="8" cy="10" r="1"></circle><circle cx="11" cy="7" r="1"></circle><circle cx="15" cy="8" r="1"></circle>
+    </symbol>
+    <symbol id="i-window" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <path d="M3 9h18"></path><path d="M7 13h6"></path><path d="M7 16h10"></path>
+    </symbol>
+    <symbol id="i-box" viewBox="0 0 24 24">
+      <path d="M21 8l-9-5-9 5 9 5z"></path>
+      <path d="M3 8v8l9 5 9-5V8"></path>
+      <path d="M12 13v8"></path>
+    </symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24">
+      <circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle>
+      <path d="M8.5 8.5L21 21"></path><path d="M8.5 15.5L21 3"></path>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24">
+      <path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-5a8 8 0 1 1 18-6z"></path>
+      <path d="M8 11h8"></path><path d="M8 15h5"></path>
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path d="M8 8l-4 4 4 4"></path><path d="M16 8l4 4-4 4"></path><path d="M13 5l-2 14"></path>
+    </symbol>
+  </svg>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Luthfy Putra Permana S.M.">
+        <span class="brand-mark">LP</span>
+        <span>Luthfy Putra Permana S.M.</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#profil">Profil</a>
+        <a href="#results">Angka</a>
+        <a href="#case-studies">Project</a>
+        <a href="#skills">Skill</a>
+        <a class="btn btn-primary" href="mailto:putraluthfy26@gmail.com">Kontak</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="flex flex-col lg:flex-row min-h-screen relative z-10 box-border">
+  <main id="top">
+    <section class="hero" id="profil">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Digital Marketing • Meta Ads • Content Monetization • AI Video</p>
+          <h1>Luthfy Putra Permana S.M.</h1>
+          <p class="lead">Digital marketer yang fokus di Meta Ads, content monetization, landing page, digital product, dashboard, dan AI video.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#case-studies">Lihat Project</a>
+            <a class="btn btn-secondary" href="#skills">Lihat Skill</a>
+          </div>
+          <p class="hero-note">Portfolio utama: <strong>@ezplan_id</strong>, <strong>@fellisrgns</strong>, dan project content monetization Facebook.</p>
+        </div>
 
-        <!-- SECTION 1: FIXED LEFT SIDEBAR -->
-        <aside class="w-full lg:w-80 lg:fixed lg:top-0 lg:bottom-0 glass-card shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-none z-20 flex flex-col justify-between transition-colors duration-500 border-r border-slate-200/50 dark:border-white/5">
-            <div class="p-6 lg:p-10 flex-grow overflow-y-auto no-scrollbar">
-                
-                <!-- Profile Mobile View Enhancements: Flex row on small screens, col on large -->
-                <div class="flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center gap-6 mb-8 lg:mb-8">
-                    
-                    <!-- Profile Image -->
-                    <div class="relative group shrink-0">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-accent-500 to-indigo-500 rounded-full blur opacity-20 group-hover:opacity-60 transition-opacity duration-500"></div>
-                        <img src="https://drive.google.com/thumbnail?id=1h10AvXfg-nctQZk5C8QuUpXH9dwOPaRB&sz=w800" 
-                             alt="Luthfy Putra Permana" 
-                             class="relative w-32 h-32 sm:w-28 sm:h-28 lg:w-40 lg:h-40 rounded-full object-cover object-top border-4 border-white dark:border-slate-800 shadow-xl hover:scale-105 transition-transform duration-500 bg-white">
-                    </div>
-
-                    <!-- Profile Info -->
-                    <div class="text-center sm:text-left lg:text-center w-full">
-                        <h1 class="text-3xl sm:text-2xl lg:text-3xl font-display font-extrabold tracking-tight mb-2 text-gradient leading-tight">Luthfy Putra Permana S.M.</h1>
-                        <h2 class="text-xs lg:text-sm font-semibold text-accent-700 dark:text-accent-400 bg-white/80 dark:bg-slate-800/80 border border-accent-100 dark:border-slate-700 shadow-sm inline-block px-3 py-1.5 rounded-full mb-3">Tech-Forward HR & Digital Marketer</h2>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium lg:px-2">
-                            "Bridging Enterprise Operations with AI & Digital Growth."
-                        </p>
-                    </div>
-                </div>
-
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent mb-8 hidden lg:block"></div>
-
-                <!-- Contact Info Grid on mobile, Stack on Desktop -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 text-sm bg-white/50 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-[inset_0_2px_10px_rgba(255,255,255,0.7)] dark:shadow-none hover:bg-white/80 dark:hover:bg-slate-800/80 transition-colors">
-                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
-                            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                        </div>
-                        <div class="flex flex-col overflow-hidden leading-tight">
-                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Email</span>
-                            <span class="font-semibold truncate"><a href="mailto:putraluthfy26@gmail.com">putraluthfy26@gmail.com</a></span>
-                        </div>
-                    </div>
-                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
-                            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-                        </div>
-                        <div class="flex flex-col leading-tight">
-                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Phone</span>
-                            <span class="font-semibold">08128463xxxx</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center text-slate-700 dark:text-slate-300 group hover:text-accent-600 dark:hover:text-accent-400 transition-colors sm:col-span-2 lg:col-span-1">
-                        <div class="w-8 h-8 rounded-full bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-400 flex items-center justify-center mr-3 shrink-0 shadow-sm">
-                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                        </div>
-                        <div class="flex flex-col leading-tight">
-                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Location</span>
-                            <span class="font-semibold">East Jakarta, Indonesia</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="showcase" aria-label="Foto dan ringkasan profil Luthfy">
+          <div class="profile-card">
+            <div class="profile-photo-wrap">
+              <img class="profile-photo" src="https://drive.google.com/thumbnail?id=1nGpMpF6p38l1fMaHttFbjMpV5X7mjxlR&sz=w1000" alt="Luthfy Putra Permana S.M.">
             </div>
-            <!-- Social Link block has been removed per user request -->
-        </aside>
-
-        <!-- Right Content Area -->
-        <main class="flex-1 lg:ml-80 flex flex-col min-h-screen relative w-full">
-            
-            <!-- SECTION 2: TOP NAVIGATION -->
-            <header class="sticky top-0 z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/50 dark:border-white/5 shadow-sm transition-colors duration-500">
-                <div class="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    
-                    <!-- Scrollable Tabs -->
-                    <div class="w-full sm:w-auto overflow-x-auto no-scrollbar pointer-events-auto">
-                        <nav class="flex space-x-6 sm:space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap px-2 pb-1">
-                            <button class="nav-btn text-accent-600 dark:text-accent-400 active transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('about', this)">About</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('resume', this)">Resume</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('portfolio', this)">Portfolio</button>
-                            <button class="nav-btn transition-colors hover:text-slate-900 dark:hover:text-white font-display" onclick="switchTab('credentials', this)">Credentials</button>
-                        </nav>
-                    </div>
-
-                    <!-- Theme Toggle & Download CV Button -->
-                    <div class="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
-                        <button id="theme-toggle" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm">
-                            <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
-                            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-                        </button>
-                        
-                        <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-accent-600 to-indigo-600 text-white font-semibold text-sm hover:from-accent-700 hover:to-indigo-700 transition-all shadow-[0_8px_16px_rgba(79,70,229,0.2)] transform hover:-translate-y-0.5 whitespace-nowrap ring-2 ring-white dark:ring-slate-900 ring-offset-1">
-                            <i data-lucide="download" class="w-4 h-4 mr-2"></i>
-                            Download CV
-                        </a>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Main Content Container -->
-            <div class="flex-grow max-w-5xl mx-auto w-full px-5 sm:px-8 lg:px-12 py-10 lg:py-16">
-                
-                <!-- SECTION 3: TAB 1 - "ABOUT" -->
-                <section id="about" class="tab-content active animate-fade-in">
-                    <div class="mb-14 glass-card p-6 sm:p-10 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-none relative overflow-hidden">
-                        <!-- Decorative blob inside card -->
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent-100 dark:bg-accent-500/10 rounded-full blur-2xl opacity-60"></div>
-                        
-                        <h2 class="text-3xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 relative z-10">About Me<span class="text-accent-600 dark:text-accent-400">.</span></h2>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-gradient inline-block leading-snug relative z-10">"Logika Sistem, Akurasi Data, Pertumbuhan Digital & AI."</h3>
-                        
-                        <div class="space-y-5 text-slate-600 dark:text-slate-400 leading-relaxed text-[17px] relative z-10 font-medium">
-                            <p>
-                                Saya memadukan dua dunia yang jarang bertemu: presisi operasional SDM skala enterprise dan ketajaman strategi Digital Marketing. Dengan fondasi IT yang kuat dari SMKN 26 Pembangunan Jakarta dan pemahaman bisnis dari S1 Manajemen STIE Jayakarta, saya melihat setiap tantangan operasional melalui lensa sistem dan data.
-                            </p>
-                            <p>
-                                Selama 8 tahun di WIKA, saya memastikan jantung operasional perusahaan berdetak tanpa henti. Saya tidak hanya mengelola integritas data HCMS, C&B, dan payroll melalui ekosistem SAP, tetapi juga mentransformasi data mentah tersebut menjadi solusi visual yang strategis dengan membangun Dashboard Komposisi Personil interaktif di Looker Studio. Hal ini memungkinkan pengambilan keputusan berbasis data yang lebih akurat dan efisien di lingkungan korporat.
-                            </p>
-                            <p>
-                                Di luar operasional korporat, saya adalah seorang praktisi Digital Marketing yang membangun ekosistem bisnis digital dari nol. Saya memiliki keahlian dalam merakit landing page fungsional berkonversi tinggi menggunakan WordPress, Scalev, dan Lynk, serta mengeksekusi kampanye Meta Ads yang efektif.
-                            </p>
-                            <p>
-                                Keunggulan utama saya terletak pada efisiensi alur kerja menggunakan teknologi AI—mulai dari pemanfaatan Google AI Studio, AI Prompting untuk produksi konten visual dan copywriting, hingga menyusun automasi menggunakan Google Apps Script. Kombinasi antara ketajaman operasional, kreativitas berbasis AI (termasuk video editing via CapCut), dan strategi akuisisi audiens ini memungkinkan saya membangun ekosistem digital yang lincah dan efisien di era modern.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="mb-16">
-                        <div class="flex items-center gap-4 mb-8">
-                            <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center shrink-0">
-                                <i data-lucide="zap" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">My Expertise</h3>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="database" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200">SAP HR/HCM</h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Looker Studio <br><span class="text-xs text-slate-500 dark:text-slate-400 font-medium">(HR Analytics)</span></h4>
-                            </div>
-                            <!-- Repeats of Skill Structure -->
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="table-2" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Advanced Spreadsheet</h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="sparkles" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">AI Prompting <br><span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">(Img, Vid, Script)</span></h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="cpu" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Google AI Studio</h4>
-                            </div>
-                            <!-- Second Row Skills -->
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="clapperboard" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">CapCut Editing</h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="layout" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Landing Page <br><span class="text-xs text-slate-500 dark:text-slate-400 font-medium">(WP, Scalev)</span></h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="target" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Meta Ads Strategist</h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="image" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Canva Editing</h4>
-                            </div>
-                            <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-white dark:border-white/5 hover:border-accent-200 dark:hover:border-accent-500/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none text-center hover:shadow-[0_8px_25px_rgba(2,132,199,0.1)] dark:hover:shadow-[0_8px_25px_rgba(2,132,199,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
-                                <div class="w-14 h-14 mx-auto bg-gradient-to-br from-accent-50 to-indigo-50 dark:from-slate-700 dark:to-slate-700 text-accent-600 dark:text-accent-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                                    <i data-lucide="package" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 leading-tight">Product Mgmt. <br><span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">(Digital)</span></h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="flex items-center gap-4 mb-8">
-                            <div class="w-10 h-10 bg-teal-100 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 rounded-xl flex items-center justify-center shrink-0">
-                                <i data-lucide="layers" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">What I Bring to the Table</h3>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <!-- Card 1 -->
-                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-accent-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent-50 dark:bg-accent-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-accent-600 dark:text-accent-400 mb-6 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <i data-lucide="briefcase" class="w-6 h-6"></i>
-                                    </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Enterprise HR Ops</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                        Compensation & Benefit, Payroll Processing, & HCMS Administration.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-50 dark:bg-indigo-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                                        <i data-lucide="line-chart" class="w-6 h-6"></i>
-                                    </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Data Analytics & Auto</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                        Personnel Dashboard Visualization, Advanced Spreadsheet logic, & Apps Script Automation.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card 3 -->
-                            <div class="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-50 dark:bg-teal-500/5 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
-                                <div class="relative z-10">
-                                    <div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl shadow-sm flex items-center justify-center text-teal-600 dark:text-teal-400 mb-6 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <i data-lucide="rocket" class="w-6 h-6"></i>
-                                    </div>
-                                    <h4 class="text-xl font-display font-extrabold text-slate-900 dark:text-white mb-3">Digital Marketing & AI</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                        Meta Ads Optimization, High-Converting Landing Pages, & AI-Assisted Creative Production.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 4: TAB 2 - "RESUME" -->
-                <section id="resume" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-12">Resume <span class="text-accent-600 dark:text-accent-400">.</span></h2>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                        
-                        <!-- Professional Experience -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-none shadow-xl shadow-slate-200/50 dark:shadow-none">
-                            <div class="flex items-center mb-8">
-                                <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-accent-500/30">
-                                    <i data-lucide="briefcase" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">Experience</h3>
-                            </div>
-                            
-                            <div class="relative border-l-[3px] border-accent-200 dark:border-slate-700 ml-6 pl-8 pb-4">
-                                <!-- Role 1 -->
-                                <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.1s;">
-                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">8 Years</span>
-                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">HR Administration & C&B</h4>
-                                    <h5 class="text-accent-600 dark:text-accent-400 font-semibold mb-3 flex items-center">
-                                        <i data-lucide="building-2" class="w-4 h-4 mr-2"></i> WIKA
-                                    </h5>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
-                                        Mengelola presisi kompensasi dan administrasi SDM. Menggabungkan ketelitian operasional SAP & HCMS dengan kemampuan merakit visualisasi data (Looker Studio) untuk memantau komposisi personil.
-                                    </p>
-                                </div>
-                                
-                                <!-- Role 2 -->
-                                <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.2s;">
-                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Project Based</span>
-                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1 leading-tight">Digital Marketer, AI Creator <br>& Landing Page Specialist</h4>
-                                    <h5 class="text-indigo-600 dark:text-indigo-400 font-semibold mt-2 mb-3 flex items-center">
-                                        <i data-lucide="folder-git-2" class="w-4 h-4 mr-2"></i> Collaborations
-                                    </h5>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
-                                        Merancang ekosistem landing page, strategi digital marketing, dan optimasi Meta Ads. Memanfaatkan Google AI Studio, teknik AI prompting, dan CapCut untuk memproduksi aset visual dan copywriting secara efisien.
-                                    </p>
-                                </div>
-
-                                <!-- Role 3 -->
-                                <div class="timeline-item relative animate-slide-up" style="animation-delay: 0.3s;">
-                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">1 Year</span>
-                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">IT Support</h4>
-                                    <h5 class="text-teal-600 dark:text-teal-400 font-semibold mb-3 flex items-center">
-                                        <i data-lucide="building" class="w-4 h-4 mr-2"></i> BNPB
-                                    </h5>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
-                                        Memberikan dukungan teknis, pemeliharaan infrastruktur IT, dan troubleshooting jaringan untuk operasional instansi pemerintah.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl border-none shadow-xl shadow-slate-200/50 dark:shadow-none">
-                            <div class="flex items-center mb-8">
-                                <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl flex items-center justify-center mr-4 shadow-lg shadow-indigo-500/30">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">Education</h3>
-                            </div>
-                            
-                            <div class="relative border-l-[3px] border-indigo-200 dark:border-slate-700 ml-6 pl-8 pb-4">
-                                <div class="timeline-item relative mb-12 animate-slide-up" style="animation-delay: 0.2s;">
-                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Higher Education</span>
-                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">S1 Manajemen</h4>
-                                    <h5 class="text-slate-500 dark:text-slate-400 font-semibold mb-3">STIE Jayakarta</h5>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
-                                        Mempelajari dasar-dasar manajemen bisnis, organisasi, dan strategi perencanaan untuk mengelola operasional dengan efisien.
-                                    </p>
-                                </div>
-                                
-                                <div class="timeline-item relative animate-slide-up" style="animation-delay: 0.3s;">
-                                    <span class="inline-block px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full mb-3 shadow-sm border border-slate-100 dark:border-slate-700">Vocational</span>
-                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Teknik Komputer</h4>
-                                    <h5 class="text-slate-500 dark:text-slate-400 font-semibold mb-3">SMKN 26 Pembangunan Jakarta</h5>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium">
-                                        Membangun fondasi kuat di bidang IT, jaringan komputer, dan fundamental sistem teknologi informasi.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- SECTION 5: TAB 3 - "PORTFOLIO" -->
-                <section id="portfolio" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-10">Portfolio <span class="text-accent-600 dark:text-accent-400">.</span></h2>
-                    
-                    <!-- Filter Buttons -->
-                    <div class="flex flex-wrap gap-2 sm:gap-3 mb-10 bg-white/50 dark:bg-slate-800/50 p-2 rounded-3xl inline-flex backdrop-blur-md border border-white/60 dark:border-white/5 shadow-sm">
-                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-slate-900 dark:bg-accent-600 text-white shadow-xl shadow-slate-900/20" data-filter="all">All Projects</button>
-                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm" data-filter="hr-data">HR & Data Analytics</button>
-                        <button class="filter-btn px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all bg-transparent text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm" data-filter="digital-ai">Digital Marketing & AI</button>
-                    </div>
-
-                    <!-- Portfolio Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                        
-                        <!-- Card 1 -->
-                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="SAP Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-white/95 text-slate-800 backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Enterprise HR</span>
-                                </div>
-                            </div>
-                            <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">SAP & HCMS Maintenance</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                    Menjaga integritas data personalia di sistem HCMS WIKA. Memvalidasi proses kompensasi bulanan melalui SAP dengan standar nol-toleransi terhadap anomali data untuk operasional skala besar.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="hr-data">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Data Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-indigo-500/95 text-white backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">HR Analytics</span>
-                                </div>
-                            </div>
-                            <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Personnel HR Dashboard Looker Studio</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                    Merancang arsitektur data dari spreadsheet untuk melacak pergerakan karyawan. Diolah menjadi dashboard visual interaktif yang memudahkan manajemen memantau metrik HR secara transparan (WIKA).
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop" alt="Web Development" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-gradient-to-r from-accent-600 to-indigo-600 text-white backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Landing Page</span>
-                                </div>
-                            </div>
-                            <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Digital Product Ecosystem Ezplan.id</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                    Membangun ekosistem produk digital berbasis website dari tahap nol. Merancang landing page yang berorientasi pada user experience dan tingkat konversi (CVR) tinggi dengan sistem otomatisasi.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" data-category="digital-ai">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="Meta Ads Marketing" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-teal-500/95 text-white backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Performance Mkt</span>
-                                </div>
-                            </div>
-                            <div class="p-6 sm:p-8">
-                                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Meta Ads & Traffic Optimization</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">
-                                    Menganalisis audiens, merancang winning hooks, dan mengoptimalkan kampanye via Meta Ads. Memanfaatkan metrik kunci (CPC, CTR, ROAS) untuk mengontrol efisiensi anggaran dan akuisisi.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 (Spans 2 cols) -->
-                        <div class="portfolio-item bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl border border-white dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-none overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group md:col-span-2" data-category="digital-ai">
-                            <div class="relative h-56 sm:h-64 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="AI Technology" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-slate-900 text-white backdrop-blur-md text-xs font-bold px-3 py-1.5 rounded-full shadow-sm border border-slate-700">AI Prompting & Automation</span>
-                                </div>
-                                <div class="absolute bottom-6 left-6 right-6 z-10">
-                                    <h3 class="text-2xl font-display font-bold text-white mb-2 shadow-sm">AI Content Generation & Automation</h3>
-                                    <p class="text-slate-200 text-sm leading-relaxed font-medium max-w-2xl">
-                                        Memanfaatkan Google AI Studio dan teknik prompting mendalam untuk memproduksi aset visual, video promosi via CapCut, serta menjalankan automasi melalui Google Apps Script guna mempercepat workflow digital.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- SECTION 6: TAB 4 - "CREDENTIALS" -->
-                <section id="credentials" class="tab-content">
-                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white mb-12">Credentials <span class="text-accent-600 dark:text-accent-400">.</span></h2>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                        
-                        <!-- Certificate 1 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-accent-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
-                            <div class="absolute -right-10 -top-10 text-accent-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
-                                <i data-lucide="award" class="w-48 h-48"></i>
-                            </div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-600 text-white rounded-2xl shadow-[0_8px_16px_rgba(2,132,199,0.3)] flex items-center justify-center mb-6">
-                                    <i data-lucide="award" class="w-7 h-7"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-5 leading-snug">
-                                    Certified HR Generalist
-                                    <span class="block text-accent-600 dark:text-accent-400 text-sm mt-1 font-semibold">Batch 20 (CHRG)</span>
-                                </h3>
-                                <div class="w-full h-32 bg-white/50 dark:bg-slate-800/50 border-2 border-dashed border-accent-200 dark:border-slate-600 rounded-2xl flex flex-col items-center justify-center text-accent-400 dark:text-accent-300 group-hover:bg-accent-50 dark:group-hover:bg-slate-700 transition-colors">
-                                    <i data-lucide="shield-check" class="w-6 h-6 mb-2"></i>
-                                    <span class="text-xs font-bold uppercase tracking-wider">Verified</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 2 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-slate-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
-                            <div class="absolute -right-10 -top-10 text-slate-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
-                                <i data-lucide="briefcase" class="w-48 h-48"></i>
-                            </div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-900 text-white rounded-2xl shadow-[0_8px_16px_rgba(15,23,42,0.3)] flex items-center justify-center mb-6">
-                                    <i data-lucide="briefcase" class="w-7 h-7"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">
-                                    Sertifikasi Kepala Bagian SDM
-                                    <span class="block text-slate-500 dark:text-slate-400 text-sm mt-1 font-semibold">(BNSP)</span>
-                                </h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-5 font-medium">
-                                    Menguatkan fondasi legalitas, compliance, dan eksekusi strategi operasional berskala enterprise.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 3 -->
-                        <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-lg dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden sm:col-span-2 lg:col-span-1">
-                            <div class="absolute -right-10 -top-10 text-indigo-500 opacity-5 dark:opacity-10 group-hover:rotate-12 transition-transform duration-700">
-                                <i data-lucide="rocket" class="w-48 h-48"></i>
-                            </div>
-                            
-                            <div class="relative z-10">
-                                <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl shadow-[0_8px_16px_rgba(79,70,229,0.3)] flex items-center justify-center mb-6">
-                                    <i data-lucide="rocket" class="w-7 h-7"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">
-                                    Digital Marketing
-                                    <span class="block text-indigo-500 dark:text-indigo-400 text-sm mt-1 font-semibold">MySkill.id</span>
-                                </h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-5 font-medium">
-                                    Memvalidasi pemahaman mengenai strategi pemasaran digital, performance marketing, dan eksekusi kampanye.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
+            <div class="profile-caption">
+              <h2>Luthfy Putra Permana S.M.</h2>
+              <p>Meta Ads, content monetization, landing page, dashboard, dan AI creative.</p>
             </div>
-        </main>
-    </div>
+          </div>
+        </div>
+      </div>
+      <div class="shell metric-strip" id="results">
+        <div class="metric">
+          <strong>8.000+</strong>
+          <span>sales</span>
+        </div>
+        <div class="metric">
+          <strong>Rp300Jt+</strong>
+          <span>Meta Ads spend</span>
+        </div>
+        <div class="metric">
+          <strong>130K</strong>
+          <span>followers</span>
+        </div>
+        <div class="metric">
+          <strong>30Jt+</strong>
+          <span>views + FB monetization</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scripts for Interactivity -->
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+    <section id="case-studies">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Project</h2>
+          <p>Beberapa portfolio utama yang paling relevan dengan digital marketing dan content growth.</p>
+        </div>
 
-        // Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
+        <div class="filter-tabs" data-filter-group="projects" aria-label="Filter project">
+          <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="ads">Meta Ads</button>
+          <button class="filter-btn" type="button" data-filter="content">Content</button>
+          <button class="filter-btn" type="button" data-filter="ai">AI Video</button>
+        </div>
 
-        // Check local storage for preference
-        if (localStorage.getItem('theme') === 'dark') {
-            htmlElement.classList.add('dark');
-        }
+        <div class="case-grid">
+          <article class="case-card" data-category="ads web product">
+            <div class="case-visual">
+              <div class="case-icon"><svg class="icon-svg"><use href="#i-megaphone"></use></svg></div>
+              <span class="platform">Meta Ads + Funnel</span>
+              <strong>@ezplan_id</strong>
+            </div>
+            <div class="case-body">
+              <h3>Digital product & Meta Ads</h3>
+              <p>Produk digital, konten, landing page, dan iklan untuk mendorong sales.</p>
+              <div class="chips">
+                <span class="chip">Meta Ads</span>
+                <span class="chip">Digital Product</span>
+                <span class="chip">Landing Page</span>
+                <span class="chip">Lynk</span>
+                <span class="chip">WordPress & Scalev</span>
+              </div>
+            </div>
+          </article>
 
-        themeToggleBtn.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+          <article class="case-card" data-category="ads content affiliate">
+            <div class="case-visual">
+              <div class="case-icon"><svg class="icon-svg"><use href="#i-link"></use></svg></div>
+              <span class="platform">Affiliate + Meta Ads</span>
+              <strong>@fellisrgns</strong>
+            </div>
+            <div class="case-body">
+              <h3>Affiliate @ezplan_id</h3>
+              <p>Konten IG, FB, TikTok, Canva editing, short video, dan Meta Ads untuk affiliate Ezplan.</p>
+              <div class="chips">
+                <span class="chip">Affiliate Ezplan</span>
+                <span class="chip">Meta Ads</span>
+                <span class="chip">Canva Editing</span>
+                <span class="chip">IG/FB/TikTok</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card" data-category="content monetization">
+            <div class="case-visual">
+              <div class="case-icon"><svg class="icon-svg"><use href="#i-dollar"></use></svg></div>
+              <span class="platform">Facebook Monetization</span>
+              <strong>Project Survival</strong>
+            </div>
+            <div class="case-body">
+              <h3>130 ribu followers dan 30 juta views</h3>
+              <p>Project konten Facebook dengan 130K followers, 30 juta views, dan monetisasi dollar.</p>
+              <div class="chips">
+                <span class="chip">130K Followers</span>
+                <span class="chip">30M Views</span>
+                <span class="chip">Dollar Revenue</span>
+                <span class="chip">FB Monetization</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card" data-category="ai content">
+            <div class="case-visual">
+              <div class="case-icon"><svg class="icon-svg"><use href="#i-ai"></use></svg></div>
+              <span class="platform">AI Creative Workflow</span>
+              <strong>AI Video Creator</strong>
+            </div>
+            <div class="case-body">
+              <h3>AI video creator</h3>
+              <p>Eksperimen video, script, visual direction, Google Flow, dan Google AI Studio.</p>
+              <div class="chips">
+                <span class="chip">Google Flow</span>
+                <span class="chip">Google AI Studio</span>
+                <span class="chip">AI Prompting</span>
+                <span class="chip">Video Ideation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Highlights</h2>
+          <p>Angka utama dari project dan campaign yang pernah dikerjakan.</p>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-card">
+            <div class="proof-icon"><svg class="icon-svg"><use href="#i-chart"></use></svg></div>
+            <strong>8K+</strong>
+            <p>Sales dari digital product, konten, landing page, dan iklan.</p>
+          </div>
+          <div class="proof-card">
+            <div class="proof-icon"><svg class="icon-svg"><use href="#i-megaphone"></use></svg></div>
+            <strong>300Jt+</strong>
+            <p>Total spend Meta Ads yang pernah dikelola.</p>
+          </div>
+          <div class="proof-card">
+            <div class="proof-icon"><svg class="icon-svg"><use href="#i-eye"></use></svg></div>
+            <strong>30M+</strong>
+            <p>Views dari project content monetization Facebook.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Skill</h2>
+          <p>Kemampuan utama yang sering dipakai di project.</p>
+        </div>
+        <div class="services">
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-megaphone"></use></svg></div>
+            <h3>Meta Ads & campaign reading</h3>
+            <p>Creative testing, audience, budget, CTR, CPC, CPA, ROAS.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-video"></use></svg></div>
+            <h3>Organic content IG, FB, TikTok</h3>
+            <p>Hook, caption, visual, reels, short video, dan content angle.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-palette"></use></svg></div>
+            <h3>Canva editing & creative assets</h3>
+            <p>Aset konten, layout promo, visual sosial media, dan materi campaign.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-window"></use></svg></div>
+            <h3>Lynk, WordPress & Scalev</h3>
+            <p>Landing page, link bio, offer, CTA, dan conversion flow.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-box"></use></svg></div>
+            <h3>Digital product management</h3>
+            <p>Ide produk, packaging offer, materi promosi, dan feedback market.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-chart"></use></svg></div>
+            <h3>Looker Studio dashboard</h3>
+            <p>Dashboard data untuk tracking performa dan reporting.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-scissors"></use></svg></div>
+            <h3>Video editing CapCut</h3>
+            <p>Editing short video, promo content, subtitles, pacing, dan format sosial media.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon"><svg class="icon-svg"><use href="#i-ai"></use></svg></div>
+            <h3>AI video editing</h3>
+            <p>Ide video, script, prompt, visual direction, dan workflow editing berbasis AI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Tools</h2>
+          <p>Stack yang sering dipakai.</p>
+        </div>
+
+        <div class="filter-tabs" data-filter-group="tools" aria-label="Filter tools">
+          <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="ads">Ads</button>
+          <button class="filter-btn" type="button" data-filter="content">Content</button>
+          <button class="filter-btn" type="button" data-filter="ai">AI</button>
+          <button class="filter-btn" type="button" data-filter="web">Web/Data</button>
+        </div>
+
+        <div class="stack">
+          <article class="stack-card" data-category="ads">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-megaphone"></use></svg></span>Meta Ads</h3>
+            <p>Campaign, ad set, creative test, retargeting, dan scale budget.</p>
+          </article>
+          <article class="stack-card" data-category="content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-video"></use></svg></span>Instagram</h3>
+            <p>Reels, feed, story, content angle, social proof, dan brand trust.</p>
+          </article>
+          <article class="stack-card" data-category="content monetization">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-dollar"></use></svg></span>Facebook</h3>
+            <p>Page growth, video distribution, monetization, dan audience retention.</p>
+          </article>
+          <article class="stack-card" data-category="content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-video"></use></svg></span>TikTok</h3>
+            <p>Short video format, trend adaptation, hook, dan discovery content.</p>
+          </article>
+          <article class="stack-card" data-category="ai content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-ai"></use></svg></span>Google Flow</h3>
+            <p>AI video generation untuk mempercepat eksperimen creative.</p>
+          </article>
+          <article class="stack-card" data-category="ai">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-ai"></use></svg></span>Google AI Studio</h3>
+            <p>Prompting, ideation, script, visual direction, dan copy support.</p>
+          </article>
+          <article class="stack-card" data-category="web">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-window"></use></svg></span>Landing Page</h3>
+            <p>Lynk, WordPress, Scalev, offer, CTA, dan conversion flow.</p>
+          </article>
+          <article class="stack-card" data-category="web data">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-chart"></use></svg></span>Looker Studio</h3>
+            <p>Dashboard untuk merapikan data dan memantau angka yang penting.</p>
+          </article>
+          <article class="stack-card" data-category="content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-palette"></use></svg></span>Canva</h3>
+            <p>Editing konten, aset promosi, dan layout visual untuk sosial media.</p>
+          </article>
+          <article class="stack-card" data-category="content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-scissors"></use></svg></span>CapCut</h3>
+            <p>Editing video pendek, caption, subtitle, dan promo content.</p>
+          </article>
+          <article class="stack-card" data-category="ai content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-chat"></use></svg></span>ChatGPT</h3>
+            <p>Ide konten, copy, script, prompt, dan struktur campaign.</p>
+          </article>
+          <article class="stack-card" data-category="ai content">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-ai"></use></svg></span>Gemini</h3>
+            <p>Riset, ide creative, script, dan workflow AI content.</p>
+          </article>
+          <article class="stack-card" data-category="ai web">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-code"></use></svg></span>Codex</h3>
+            <p>Build, revisi, dan eksperimen website atau workflow digital.</p>
+          </article>
+          <article class="stack-card" data-category="ai web">
+            <h3><span class="tool-icon"><svg class="icon-svg"><use href="#i-window"></use></svg></span>Lovable</h3>
+            <p>Prototyping web app, landing page, dan ide produk digital.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <h2>Kontak</h2>
+            <p>Terbuka untuk ngobrol soal project, portfolio, atau kolaborasi.</p>
+          </div>
+          <a class="btn" href="mailto:putraluthfy26@gmail.com">Hubungi Saya</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">© 2026 Luthfy Putra Permana S.M. Digital marketing, content, dashboard, product, and AI creative profile.</div>
+  </footer>
+  <script>
+    const filterGroups = document.querySelectorAll("[data-filter-group]");
+
+    filterGroups.forEach((group) => {
+      const section = group.closest("section");
+      const targetSelector = group.dataset.filterGroup === "projects" ? ".case-card" : ".stack-card";
+      const cards = section.querySelectorAll(targetSelector);
+
+      group.addEventListener("click", (event) => {
+        const button = event.target.closest(".filter-btn");
+        if (!button) return;
+
+        const filter = button.dataset.filter;
+        group.querySelectorAll(".filter-btn").forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+
+        cards.forEach((card) => {
+          const categories = (card.dataset.category || "").split(" ");
+          card.classList.toggle("is-hidden", filter !== "all" && !categories.includes(filter));
         });
+      });
+    });
 
-        // Tab Switching Logic
-        function switchTab(tabId, btnElement) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active', 'text-accent-600', 'dark:text-accent-400');
-            });
-            
-            const selectedTab = document.getElementById(tabId);
-            selectedTab.classList.add('active');
-            
-            if(btnElement) {
-                btnElement.classList.add('active', 'text-accent-600', 'dark:text-accent-400');
-            }
+    const navLinks = [...document.querySelectorAll(".nav-links a[href^='#']")];
+    const sections = navLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
 
-            // Set scroll behavior
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    const setActiveNav = () => {
+      let activeId = sections[0]?.id;
+
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top < 150) {
+          activeId = section.id;
         }
+      });
 
-        // Portfolio Filtering Logic
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
+      });
+    };
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-slate-900', 'dark:bg-accent-600', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
-                    b.classList.add('bg-transparent', 'text-slate-600', 'dark:text-slate-300');
-                });
-                btn.classList.remove('bg-transparent', 'text-slate-600', 'dark:text-slate-300');
-                btn.classList.add('bg-slate-900', 'dark:bg-accent-600', 'text-white', 'shadow-xl', 'shadow-slate-900/20');
-
-                const filterValue = btn.getAttribute('data-filter');
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        item.style.animation = 'fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    setActiveNav();
+    window.addEventListener("scroll", setActiveNav, { passive: true });
+  </script>
 </body>
 </html>
